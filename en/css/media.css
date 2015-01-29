@@ -1,0 +1,104 @@
+@media screen and (max-width: 1024px) {
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    #forCompany h3 {
+        font-size: 12px;
+    }
+
+    p, ul.ua-contacts li,  ul.ua-contacts li a {
+        font-size: 10px;
+    }
+
+    #forCompany h2 {
+        width: 117px;
+        font-size: 13px;
+    }
+
+    form input {
+         font-size: 12px;
+    }
+
+    #contacts h1 {
+        font-size: 23px;
+    }
+
+    #contacts h1 + p {
+        font-size: 8px;
+    }
+
+    #contacts p {
+        font-size: 10px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+
+    footer h2 {
+        font-size: 23px;
+    }
+
+    #portfolio a img + h3 {
+        font-size: 23px;
+    }
+
+    input[name="name"] {
+        width: 70%;
+        margin-left: 8px;
+    }
+
+    input[name="country"] {
+        width: 65%;
+        margin-left: 8px;
+    }
+
+    input[name="telephone"] {
+        margin-left: 8px;
+        width: 46%;
+    }
+
+    input[name="email"] {
+        width: 70%;
+        margin-left: 8px;
+    }
+
+    textarea {
+        margin: 0px;
+        width: 98%;
+        height: 75%;
+        resize: none;
+        overflow: auto;
+        position: absolute;
+        top: 28%;
+        background: none;
+        text-indent: 29%;
+        font-size: 12px;
+        font-family: Futura Pt Book;
+        line-height: 5.7;
+        border: 0;
+        outline: 0;
+    }
+
+    #portfolio #firstSection a div.description{
+        width: 100%;
+        height: 29%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -15% -50%;
+    }
+
+    #portfolio #firstSection a div.description h3{
+        font-size: 14px;
+    }
+
+    #portfolio #firstSection a div.description p{
+        font-size: 12px;
+    }
+
+    .contactsCountry ul {
+        width: 12%;
+    }
+}

@@ -1,0 +1,40 @@
+html, body{
+    width: 100%;
+    margin: 0;
+font-size: 0;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    width: 56px;
+    height: 56px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    -webkit-transition:  background-image 200ms;
+    -moz-transition:  background-image 200ms;
+    -ms-transition:  background-image 200ms;
+    -o-transition:  background-image 200ms;
+    transition:  background-image 200ms;
+}
+
+a.white{
+    background-image: url("../img/backWhite.png");
+}
+
+a.black{
+    background-image: url("../img/backBlack.png");
+}
+
+a.white:hover {
+    background-image: url("../img/backWhiteHover.png");
+}
+
+a.black:hover{
+    background-image: url("../img/backBlackHover.png");
+}
