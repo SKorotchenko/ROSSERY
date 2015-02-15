@@ -36,14 +36,35 @@ $mysqli->set_charset('utf-8');
 $_POST['mContent'] = $mysqli->escape_string($_POST['mContent']);
 
 // добавляем материал
-if(!isset($_POST['mID'])){
-	$q = '
+if(!isset($_POST['mID'])) {
+    $q = '
 		insert into `portfolio` (
 					`timestamp`,	`name`,					`content`,					`field`,					`preview`,					`image`,				`back_color`				)
-		values(		'.time().',		"'.$_POST['mName'].'",	"'.$_POST['mContent'].'",	'.$_POST['mCategory'].',	"'.$_POST['mPreview'].'",	"'.$_POST['mImg'].'",	"'.$_POST['mColor'].'"		);
+		values(		' . time() . ',		"' . $_POST['mName'] . '",	"' . $_POST['mContent'] . '",	' . $_POST['mCategory'] . ',	"' . $_POST['mPreview'] . '",	"' . $_POST['mImg'] . '",	"' . $_POST['mColor'] . '"		);
 		';
-	if(!$result = $mysqli->query($q))
-		die('Query error: portfolioChange 1');
+    if (!$result = $mysqli->query($q)) {
+        die('Query error: portfolioChange 1');
+    }
+
+    /*$path = '../../../'.$_POST['mImg'].'/';
+    $dir = chdir ($path);
+    if ($file = file_exists('index.html')){
+       /* $file_content = file_get_contents('index.html');
+        $find_head = stripos ($file_content, '<head>');
+        $file_content = substr_replace ($file_content, '
+<link rel="stylesheet" href="../css/portfolio.css">
+', $find_head+5);
+        $find_body = stripos ($file_content, '<body>');
+        $file_content = substr_replace ($file_content, '
+<?php
+	include "admin/php/const.php";
+	include "php/portfolio.php";
+?>
+<a id="backLink" class="<?= $list[0][7] ?>" href="/"></a>
+', $find_body+5);
+        $file = file_put_contents($file,'bla-bla');
+    };*/
+
 // обновляем материал
 } else {
 	$q = '
@@ -61,7 +82,6 @@ if(!isset($_POST['mID'])){
 	if(!$result = $mysqli->query($q))
 		die('Query error: portfolioChange 2');
 }
-
 
 // connection close
 $mysqli->close();

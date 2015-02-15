@@ -91,55 +91,37 @@ $(document).on('ready',function(){
 /* FILE MANAGER */
 	$('.fileManagerOpen').on('click',function(){
 		var id = $(this).parent('li').data('id');
-		$('.popShadow').data('id',id).show();
+		$('.popShadow#'+id).show();
 	})
 	
-	$('.selectImgURLBlock').on('click',function(e){
+	$('.selectImgURLBlock.preview').on('click',function(e){
 		var $img = $(this).find('img'),
 			src = $img.attr('src'),
-			id = $('.popShadow').data('id');
+			id = 'preview';
 		if($img.hasClass('folder'))
 			return false;
 		$('.inputList > li[data-id="' + id + '"] .imgSrc').val(src.substr(3));
-		$('.popShadow').data('id','').hide();
+        $('.popShadow#'+id).hide();
 	})
+
+    $('.selectImgURLBlock.dir').on('click',function(e){
+        console.log('click work');
+        var $dir = $(this).find('div'),
+            $img = $(this).find('img')
+            dirName = $($dir).html(),
+            id = 'dir';
+        console.log(dirName);
+        if($img.hasClass('folder')) {
+            $('.inputList > li[data-id="' + id + '"] .imgSrc').val(dirName/*substr(3)*/);
+        }
+        else{
+            return false;
+        }
+     $('.popShadow#'+id).hide();
+    })
 	
 	$('.closePopup').on('click',function(){
 		$('.popShadow').data('id','').hide();
 	})
-
-
-
-	/*
-	$('#newCat').on('click',function(){
-		$(this).parent().addClass('hide');
-	})
-
-	$('#backToCatList').on('click',function(){
-		$('#newCat').parent().removeClass('hide');
-		$('#newCatName').val('');
-	})
-
-	$('#newCatAdd').on('click',function(){
-		var catName = $('#newCatName').val();
-		if(!catName){
-			$('#newCatName').focus();
-			return false;
-		}
-		for(i=0;i<$('#materialSelect option').length;i++)
-			if(catName == $('#materialSelect option').eq(i).text()){
-				alert('Категория с таким именем уже существует!');
-				$('#newCatName').select();
-				return false;
-			}
-		$('#newCatName').val('');
-		$('#newCat').parent().removeClass('hide');
-		$('#materialSelect option[selected]').removeAttr('selected');
-		$('#materialSelect').append('<option selected>' + catName + '</option>');
-		$('#newCatMess').css('display','inline-block');
-	})
-	*/
-
-
 
 })

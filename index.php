@@ -63,7 +63,7 @@
                                         for($i=0; $i<count($list); $i++)
                                             if($list[$i][4] == 0) { ?>
                                             <li>
-                                                <a class="projects" href="portfolio.php?id=<?= $list[$i][0] ?>" <!--title="<?= $list[$i][2] ?>-->">
+                                                <a class="projects" href="/<?= $list[$i][6] ?>/?id=<?= $list[$i][0] ?>"<!--portfolio.php?id=<?= $list[$i][0] ?>" <!--title="<?= $list[$i][2] ?>-->">
                                                     <div class="light">
                                                         <div class="description">
                                                             <h3><?= $list[$i][2] ?></h3>
@@ -82,7 +82,7 @@
                                         for($i=0; $i<count($list); $i++)
                                             if($list[$i][4] == 1) { ?>
                                             <li>
-                                                <a class="projects" href="portfolio.php?id=<?= $list[$i][0] ?>">
+                                                <a class="projects" href="/<?= $list[$i][6] ?>/?id=<?= $list[$i][0] ?>"<!--portfolio.php?id=<?= $list[$i][0] ?>" <!--title="<?= $list[$i][2] ?>-->">
                                                     <div class="light">
                                                         <div class="description">
                                                             <h3><?= $list[$i][2] ?></h3>
@@ -101,7 +101,7 @@
                                         for($i=0; $i<count($list); $i++)
                                             if($list[$i][4] == 2) { ?>
                                             <li>
-                                                <a class="projects" href="portfolio.php?id=<?= $list[$i][0] ?>">
+                                                <a class="projects" href="/<?= $list[$i][6] ?>/?id=<?= $list[$i][0] ?>"<!--portfolio.php?id=<?= $list[$i][0] ?>" <!--title="<?= $list[$i][2] ?>-->">
                                                     <div class="light">
                                                         <div class="description">
                                                             <h3><?= $list[$i][2] ?></h3>

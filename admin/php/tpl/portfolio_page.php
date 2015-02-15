@@ -42,12 +42,12 @@
 				<textarea name="mContent" class="ckeditor" id="editor"><?php if(isset($_GET['id'])) print $list[$current][3] ?></textarea>
 			</li>
 			<li>Превью-изображение:</li>
-			<li data-id="0">
+			<li data-id="preview">
 				<input type="text" class="imgSrc" name="mPreview"<?php if(isset($_GET['id'])) print 'value="'.$list[$current][5].'"' ?> required>
 				<a class="button fileManagerOpen">Выбрать из менеджера</a>
 			</li>
-			<li>Контент-изображение:</li>
-			<li data-id="1">
+			<li>Папка проекта:</li>
+			<li data-id="dir">
 				<input type="text" class="imgSrc" name="mImg"<?php if(isset($_GET['id'])) print 'value="'.$list[$current][6].'"' ?> required>
 				<a class="button fileManagerOpen">Выбрать из менеджера</a>
 			</li>
@@ -64,7 +64,7 @@
 			<li><input type="submit" value="Отправить"></li>
 		</ul>
 	</form>
-	<div class="popShadow">
+	<div class="popShadow" id="preview">
 		<div class="popup">
 			<span class="closePopup" title="Закрыть окно">x</span>
 			<div class="popTitle">Выбор картинки <span>(/img/)</span></div>
@@ -73,7 +73,7 @@
 					$base = '../img/';
 					$scan = scandir($base);
 					for($i=2; $i<count($scan); $i++) { ?>
-						<li class="selectImgURLBlock">
+						<li class="selectImgURLBlock preview">
 							<img <?php if(strripos($scan[$i],'.') !== false) print 'src="'.$base.$scan[$i].'"'; else print 'src="style/img/folder.jpg" class="folder"';?> alt="preview">
 							<div class="imgsFolderFileName"><?= $scan[$i] ?></div>
 						</li>
@@ -82,5 +82,24 @@
 			</ul>
 		</div>
 	</div>
+    <div class="popShadow" id="dir">
+        <div class="popup">
+            <span class="closePopup" title="Закрыть окно">x</span>
+            <div class="popTitle">Выбор папки <span>(/)</span></div>
+            <ul>
+                <?php
+                $base = '../';
+                $scan = scandir($base);
+                for($i=2; $i<count($scan); $i++) { ?>
+                    <li class="selectImgURLBlock dir">
+                        <img <?php if(strripos($scan[$i],'.') !== false) print 'src="style/img/file.png"'; else print 'src="style/img/folder.jpg" class="folder"';?>>
+                        <div class="imgsFolderFileName"><?= $scan[$i] ?></div>
+                    </li>
+                <?php }
+                ?>
+            </ul>
+        </div>
+    </div>
+
 </article>
 
